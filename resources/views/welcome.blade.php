@@ -20,8 +20,21 @@
                     <h3>{{$product->name}}</h3>
                     <p>{{$product->description}}</p>
                 </div>
-
             @endforeach
+
+            <form method="POST" action="/send-contact" class="flex flex-col gap-3 p-3">
+
+                @if($errors->any())
+                    <p>Greska: {{$errors->first()}}</p>
+                @endif
+
+                {{csrf_field()}}
+                <input type="email" name="email" placeholder="enter email">
+                <input type="text" name="subject" placeholder="enter subject">
+                <textarea name="description"></textarea>
+                <input type="submit" value="Submit">
+            </form>
+
 
         </div>
     </div>

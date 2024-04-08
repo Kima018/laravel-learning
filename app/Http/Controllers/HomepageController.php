@@ -13,7 +13,8 @@ class HomepageController extends Controller
     {
         $currentTime = date("h:i:s");
         $hours = date("h");
-        $latestProducts = DB::table('products')->orderBy('created_at','DESC')->take(6)->get();
+        $latestProducts = ProductModel::orderByDesc('created_at')->take(6)->get();
+//        $latestProducts = DB::table('products')->orderBy('created_at','DESC')->take(6)->get();
         return view('welcome',compact("currentTime","hours","latestProducts"));
     }
 }
