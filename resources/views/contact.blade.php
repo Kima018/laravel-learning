@@ -1,18 +1,99 @@
 @extends('layout')
+@section('title','Contact us')
 
 @section('contactSection')
-<div class="bg-white">
-    <div class="relative isolate px-6 pt-14 lg:px-8">
-        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
 
-            <div class="text-center">
-                <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Contact blade</h1>
-                <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui
-                    irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
-
+    <section class="w-full py-10">
+        <div class="container w-full flex flex-wrap md:flex-nowrap mx-auto">
+            <div class="w-1/2 flex flex-col justify-center">
+                <h1 class="text-4xl font-semibold underline underline-offset-4 mb-5">Contact us</h1>
+                <p class="w-[80%]">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At blanditiis cumque, deleniti
+                    dignissimos, enim, esse fuga fugiat incidunt iste iusto labore minima minus natus non obcaecati
+                    officiis repellat reprehenderit voluptatum?
+                </p>
+            </div>
+            <div class="w-1/2 flex items-center justify-center ">
+                <!-- Author: FormBold Team -->
+                <!-- Learn More: https://formbold.com -->
+                <div class="mx-auto w-full max-w-[550px]">
+                    <form action="https://formbold.com/s/FORM_ID" method="POST">
+                        <div class="mb-5">
+                            <label
+                                for="name"
+                                class="mb-3 block text-base font-medium text-[#07074D]"
+                            >
+                                Full Name
+                            </label>
+                            <input
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="Full Name"
+                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                        </div>
+                        <div class="mb-5">
+                            <label
+                                for="email"
+                                class="mb-3 block text-base font-medium text-[#07074D]"
+                            >
+                                Email Address
+                            </label>
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="example@domain.com"
+                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                        </div>
+                        <div class="mb-5">
+                            <label
+                                for="subject"
+                                class="mb-3 block text-base font-medium text-[#07074D]"
+                            >
+                                Subject
+                            </label>
+                            <input
+                                type="text"
+                                name="subject"
+                                id="subject"
+                                placeholder="Enter your subject"
+                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                        </div>
+                        <div class="mb-5">
+                            <label
+                                for="message"
+                                class="mb-3 block text-base font-medium text-[#07074D]"
+                            >
+                                Message
+                            </label>
+                            <textarea
+                                rows="4"
+                                name="message"
+                                id="message"
+                                placeholder="Type your message"
+                                class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            ></textarea>
+                        </div>
+                        <div>
+                            <button
+                                class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none"
+                            >
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-
+    </section>
+    <div class="relative w-full h-96">
+        <iframe class="absolute top-0 left-0 w-full h-full"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=9%20bridade%20nis+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+        </iframe>
     </div>
-</div>
 @endsection

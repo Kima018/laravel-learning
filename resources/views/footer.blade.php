@@ -1,5 +1,6 @@
-<footer class="bg-indigo-100 py-5">
-    <div class="container mx-auto flex justify-center">
-        <h3 class="font-light underline underline-offset-4 hover:text-purple-700 hover:font-serif cursor-pointer transition-all ">Stranicu radi Maki@flow</h3>
+<footer class="bg-green-400 py-3">
+    <div class="container mx-auto flex flex-col justify-center items-center">
+
+       <p class="text-xs text-white -tracking-wider">makiflow&copy;2024</p>
     </div>
 </footer>

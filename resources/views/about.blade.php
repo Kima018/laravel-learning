@@ -1,4 +1,5 @@
 @extends('layout')
+@section('title','About us')
 
 @section("aboutSection")
     <div class="bg-white">

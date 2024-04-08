@@ -1,4 +1,5 @@
 @extends('layout')
+@section('title','Shop')
 @section("shopSection")
     <div class="bg-white">
         <div class="relative isolate px-6 pt-14 lg:px-8">
@@ -10,6 +11,12 @@
                         irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
 
                 </div>
+                @foreach($products as $product)
+                    @if($product === "iPhone 14")
+                        <h3>{{$product}} - SUPER SNIZENJE</h3>
+                    @endif
+                    <h3>{{$product}}</h3>
+                @endforeach
             </div>
         </div>
     </div>
