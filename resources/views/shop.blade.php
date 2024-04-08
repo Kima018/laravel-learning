@@ -12,10 +12,11 @@
 
                 </div>
                 @foreach($products as $product)
-                    @if($product === "iPhone 14")
-                        <h3>{{$product}} - SUPER SNIZENJE</h3>
-                    @endif
-                    <h3>{{$product}}</h3>
+                    <div class="pb-3">
+                        <h3>{{$product->name}}</h3>
+                        <p>{{$product->description}}</p>
+                    </div>
+
                 @endforeach
             </div>
         </div>

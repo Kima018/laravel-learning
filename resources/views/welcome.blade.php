@@ -15,6 +15,13 @@
                         irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
                 </div>
             </div>
+            @foreach($latestProducts as $product)
+                <div>
+                    <h3>{{$product->name}}</h3>
+                    <p>{{$product->description}}</p>
+                </div>
+
+            @endforeach
 
         </div>
     </div>
