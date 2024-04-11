@@ -1,26 +1,31 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\OceneController;
+use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [\App\Http\Controllers\HomepageController::class, 'index']);
+Route::get('/', [HomepageController::class, 'index']);
 Route::view('/about', 'about');
-Route::get("/contact", [\App\Http\Controllers\ContactController::class, 'index']);
-Route::get("/shop", [\App\Http\Controllers\ShopController::class, 'index']);
+Route::get("/contact", [ContactController::class, 'index']);
+Route::get("/shop", [ShopController::class, 'index']);
 
 // predavanje 6
-Route::get("/ocene", [\App\Http\Controllers\OceneController::class, 'index']);
-Route::get("/dodaj-ocenu", [\App\Http\Controllers\OceneController::class, 'dodajOcenu']);
-Route::post("/nova-ocena",[\App\Http\Controllers\OceneController::class,"novaOcena"]);
+Route::get("/ocene", [OceneController::class, 'index']);
+Route::get("/dodaj-ocenu", [OceneController::class, 'dodajOcenu']);
+Route::post("/nova-ocena",[OceneController::class,"novaOcena"]);
 
 //
 
-Route::get("/admin/all-contacts", [\App\Http\Controllers\ContactController::class, 'getAllContacts']);
-Route::get("/admin/products", [\App\Http\Controllers\ShopController::class, 'getAllProducts']);
-Route::get("/admin/add-product", [\App\Http\Controllers\ShopController::class, "addProduct"]);
-Route::get("/admin/all-products",[\App\Http\Controllers\ShopController::class,'adminAllProducts']);
-Route::get("/admin/delete-product/{product}",[\App\Http\Controllers\ShopController::class,"delete"]);
+Route::get("/admin/all-contacts", [ContactController::class, 'getAllContacts']);
+Route::get("/admin/products", [ShopController::class, 'getAllProducts']);
+Route::get("/admin/add-product", [ShopController::class, "addProduct"]);
+Route::get("/admin/all-products",[ShopController::class,'adminAllProducts']);
+Route::get("/admin/delete-product/{product}",[ShopController::class,"delete"]);
+Route::get("/admin/delete-contact/{contact}",[ContactController::class,'delete']);
 
 
-Route::post("/send-contact", [\App\Http\Controllers\ContactController::class, "sendContact"]);
-Route::post("/send-product", [\App\Http\Controllers\ShopController::class, "sendProduct"]);
+Route::post("/send-contact", [ContactController::class, "sendContact"]);
+Route::post("/send-product", [ShopController::class, "sendProduct"]);
 

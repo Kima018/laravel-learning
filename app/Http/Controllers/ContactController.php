@@ -37,4 +37,13 @@ class ContactController extends Controller
 
 
     }
+
+    public function delete($user)
+    {
+        $singleContact = ContactModel::where(["id"=>$user])->first();
+        $singleContact->delete();
+        return redirect()->back();
+
+
+    }
 }
