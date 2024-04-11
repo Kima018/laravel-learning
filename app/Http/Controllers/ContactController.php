@@ -24,16 +24,16 @@ class ContactController extends Controller
         $request->validate([
             "email" => "required|string",
             "subject" => "required|string",
-            "description" => "required|string|min:7"
+            "message" => "required|string|min:7"
         ]);
 
         ContactModel::create([
             "email" => $request->get('email'),
             "subject" => $request->get('subject'),
-            "message" => $request->get('description')
+            "message" => $request->get('message')
         ]);
 
-        return redirect('/shop');
+        return redirect('/');
 
 
     }

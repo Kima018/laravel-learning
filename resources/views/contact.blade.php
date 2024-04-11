@@ -14,25 +14,12 @@
                 </p>
             </div>
             <div class="w-1/2 flex items-center justify-center ">
-                <!-- Author: FormBold Team -->
-                <!-- Learn More: https://formbold.com -->
                 <div class="mx-auto w-full max-w-[550px]">
-                    <form action="https://formbold.com/s/FORM_ID" method="POST">
-                        <div class="mb-5">
-                            <label
-                                for="name"
-                                class="mb-3 block text-base font-medium text-[#07074D]"
-                            >
-                                Full Name
-                            </label>
-                            <input
-                                type="text"
-                                name="name"
-                                id="name"
-                                placeholder="Full Name"
-                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                            />
-                        </div>
+                    @if($errors->any())
+                        <h2> {{$errors}}</h2>
+                    @endif
+                    <form action="/admin/send-contact" method="POST" >
+                        {{csrf_field()}}
                         <div class="mb-5">
                             <label
                                 for="email"
@@ -45,9 +32,11 @@
                                 name="email"
                                 id="email"
                                 placeholder="example@domain.com"
+                                value="{{old("email")}}"
                                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                             />
                         </div>
+
                         <div class="mb-5">
                             <label
                                 for="subject"
@@ -60,9 +49,11 @@
                                 name="subject"
                                 id="subject"
                                 placeholder="Enter your subject"
+                                value="{{old("subject")}}"
                                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                             />
                         </div>
+
                         <div class="mb-5">
                             <label
                                 for="message"
@@ -78,9 +69,11 @@
                                 class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                             ></textarea>
                         </div>
+
                         <div>
                             <button
-                                class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none"
+                                type="submit"
+                                class=" rounded-md bg-green-400 py-3 px-8 text-base font-semibold text-white outline-none"
                             >
                                 Submit
                             </button>
@@ -93,7 +86,7 @@
     <div class="relative w-full h-96">
         <iframe class="absolute top-0 left-0 w-full h-full"
                 src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=9%20bridade%20nis+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-                frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+            frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
         </iframe>
     </div>
 @endsection

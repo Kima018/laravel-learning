@@ -13,7 +13,7 @@
             </div>
         @endif
 
-        <form class="min-h-[500px] relative overflow-x-auto shadow-md sm:rounded-lg" method="POST" action="/send-product">
+        <form class="min-h-[500px] relative overflow-x-auto shadow-md sm:rounded-lg" method="POST" action="/admin/send-product">
             {{csrf_field()}}
             <table class="w-full flex  text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">

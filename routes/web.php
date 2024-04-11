@@ -26,6 +26,6 @@ Route::get("/admin/delete-product/{product}",[ShopController::class,"delete"]);
 Route::get("/admin/delete-contact/{contact}",[ContactController::class,'delete']);
 
 
-Route::post("/send-contact", [ContactController::class, "sendContact"]);
-Route::post("/send-product", [ShopController::class, "sendProduct"]);
+Route::post("/admin/send-contact", [ContactController::class, "sendContact"]);
+Route::post("/admin/send-product", [ShopController::class, "sendProduct"]);
 

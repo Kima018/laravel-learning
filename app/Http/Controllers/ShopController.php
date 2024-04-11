@@ -30,10 +30,8 @@ class ShopController extends Controller
 
     public function sendProduct(Request $request)
     {
-
-
         $request->validate([
-            "product_name" => "required|string",
+            "product_name" => "required|string|unique:products,name",
             "description" => "required",
             "amount" => "required",
             "price" => "required|int"
@@ -46,7 +44,7 @@ class ShopController extends Controller
             "price" => $request->get("price")
         ]);
 
-        return redirect('/');
+        return redirect('/admin/all-products');
     }
 
     public function adminAllProducts()
