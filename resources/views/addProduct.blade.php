@@ -57,15 +57,11 @@
                     </td>
                     <td class="h-16 px-6 py-5 bg-gray-50 dark:bg-gray-800 flex">
                         <input name="image" type="file" class="self-center"/>
-
                     </td>
                 </tr>
-
                 </tbody>
             </table>
         </form>
-
-
     </section>
 
 @endsection

@@ -7,23 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     @vite('resources/css/app.css')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-{{--    <script src={{asset('js/app.js')}}></script>--}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet"/>
+
 </head>
 <body>
-@include('navigation')
 
-@yield('homeSection')
-@yield('aboutSection')
-@yield('shopSection')
-@yield('contactSection')
+<div class="mt-20">
+    @include('navigation')
+
+    @yield('homeSection')
+    @yield('aboutSection')
+    @yield('shopSection')
+    @yield('contactSection')
 
 
-@yield('allContacts')
-@yield('allProducts')
-@yield('addProduct')
+    @yield('allContacts')
+    @yield('allProducts')
+    @yield('addProduct')
+    @yield('adminAllProducts')
 
-@include('footer')
+    @include('footer')
+
+
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
 </html>

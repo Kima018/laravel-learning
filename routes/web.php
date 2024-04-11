@@ -17,7 +17,10 @@ Route::post("/nova-ocena",[\App\Http\Controllers\OceneController::class,"novaOce
 Route::get("/admin/all-contacts", [\App\Http\Controllers\ContactController::class, 'getAllContacts']);
 Route::get("/admin/products", [\App\Http\Controllers\ShopController::class, 'getAllProducts']);
 Route::get("/admin/add-product", [\App\Http\Controllers\ShopController::class, "addProduct"]);
+Route::get("/admin/all-products",[\App\Http\Controllers\ShopController::class,'adminAllProducts']);
+Route::get("/admin/delete-product/{product}",[\App\Http\Controllers\ShopController::class,"delete"]);
 
 
 Route::post("/send-contact", [\App\Http\Controllers\ContactController::class, "sendContact"]);
 Route::post("/send-product", [\App\Http\Controllers\ShopController::class, "sendProduct"]);
+
