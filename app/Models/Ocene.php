@@ -13,6 +13,7 @@ class Ocene extends Model
         "predmet",
         "ocena",
         "profesor",
+        "user_id"
     ];
 
 }

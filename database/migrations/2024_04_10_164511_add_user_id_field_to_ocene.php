@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('ocene', function (Blueprint $table) {
-           $table->string('user_id')->nullable()->after("id");
+           $table->unsignedBigInteger("user_id")->nullable()->after("id");
+           $table->foreign("user_id")->references("id")->on("users");
         });
     }
 
