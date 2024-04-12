@@ -18,7 +18,7 @@ Route::get("/dodaj-ocenu", [OceneController::class, 'dodajOcenu']);
 Route::post("/nova-ocena", [OceneController::class, "novaOcena"]);
 
 //
-Route::middleware('auth')->prefix("admin")->group(function () {
+Route::middleware(['auth',\App\Http\Middleware\AdminChack::class])->prefix("admin")->group(function () {
     Route::get("/all-contacts", [ContactController::class, 'getAllContacts'])->name('adminAllContacts');
 //Route::get("/admin/products", [ShopController::class, 'getAllProducts']);
     Route::get("/add-product", [ShopController::class, "addProduct"]);
