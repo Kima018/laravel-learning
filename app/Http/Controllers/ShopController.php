@@ -61,7 +61,7 @@ class ShopController extends Controller
         return redirect()->back();
     }
 
-    public function edit($id):View
+    public function singleProduct($id):View
     {
         $currentProduct = ProductModel::where(["id" => $id])->first();
         return view('editProduct', compact('currentProduct'));

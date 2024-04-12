@@ -27,9 +27,9 @@ Route::get("/admin/delete-contact/{contact}",[ContactController::class,'delete']
 
 
 //domaci 8
-Route::get("/admin/product/{id}",[ShopController::class,'edit'])->name('editProduct');
+Route::get("/admin/product/{product}",[ShopController::class,'singleProduct'])->name('product.single');
 Route::post("/admin/update-product",[ShopController::class,'update'])->name('updateProduct');
-Route::get("/admin/contact/{id}",[ContactController::class,'edit'])->name('editContact');
+Route::get("/admin/contact/{contact}",[ContactController::class,'singleContact'])->name('contact.single');
 Route::post("/admin/update-contact",[ContactController::class,'update'])->name('updateContact');
 
 //

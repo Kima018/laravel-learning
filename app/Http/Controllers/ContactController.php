@@ -10,18 +10,18 @@ use Illuminate\View\View;
 
 class ContactController extends Controller
 {
-    public function index():View
+    public function index(): View
     {
         return view('contact');
     }
 
-    public function getAllContacts():View
+    public function getAllContacts(): View
     {
         $allContacts = ContactModel::all();
         return view('allContacts', compact('allContacts'));
     }
 
-    public function sendContact(Request $request):RedirectResponse
+    public function sendContact(Request $request): RedirectResponse
     {
         $request->validate([
             "email" => "required|string",
@@ -40,16 +40,14 @@ class ContactController extends Controller
 
     }
 
-    public function delete($user):RedirectResponse
+    public function delete($user): RedirectResponse
     {
         $singleContact = ContactModel::where(["id" => $user])->first();
         $singleContact->delete();
         return redirect()->back();
-
-
     }
 
-    public function edit($id): View
+    public function singleContact($id): View
     {
         $currentContact = ContactModel::where(["id" => $id])->first();
         return view('editContact', compact('currentContact'));
