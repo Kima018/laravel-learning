@@ -47,10 +47,9 @@ class ContactController extends Controller
         return redirect()->back();
     }
 
-    public function singleContact($id): View
+    public function singleContact(ContactModel $contact): View
     {
-        $currentContact = ContactModel::where(["id" => $id])->first();
-        return view('editContact', compact('currentContact'));
+        return view('editContact', compact('contact'));
     }
 
     public function update(Request $request): RedirectResponse

@@ -40,20 +40,20 @@
                 <tbody class="w-full">
                 <tr class=" flex flex-col">
                     <td scope="row" class="h-16 px-6 py-4 bg-gray-50">
-                        <input type="hidden" name="contact_id" value="{{$currentContact->id}}">
+                        <input type="hidden" name="contact_id" value="{{$contact->id}}">
                         <input name="email" type="text" id="small-input"
-                               value="{{$currentContact->email}}"
+                               value="{{$contact->email}}"
                                class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     </td>
                     <td class="h-16 px-6 py-5">
                         <input name="subject" type="text" id="small-input"
-                               value="{{$currentContact->subject}}"
+                               value="{{$contact->subject}}"
                                class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
                     </td>
                     <td class="h-16 px-6 py-5 bg-gray-50 dark:bg-gray-800">
                         <input name="message" type="text" id="small-input"
-                               value="{{$currentContact->message}}"
+                               value="{{$contact->message}}"
                                class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
                     </td>

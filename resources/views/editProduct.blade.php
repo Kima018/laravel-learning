@@ -46,30 +46,30 @@
                 <tr class=" flex flex-col">
                     <td scope="row" class="h-16 px-6 py-4 bg-gray-50">
                         <input name="product_name" type="text" id="small-input"
-                               value="{{$currentProduct->name}}"
+                               value="{{$product->name}}"
                                class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     </td>
                     <td class="h-16 px-6 py-5">
                         <input name="description" type="text" id="small-input"
-                               value="{{$currentProduct->description}}"
+                               value="{{$product->description}}"
                                class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
                     </td>
                     <td class="h-16 px-6 py-5 bg-gray-50 dark:bg-gray-800">
                         <input name="amount" type="text" id="small-input"
-                               value="{{$currentProduct->amount}}"
+                               value="{{$product->amount}}"
                                class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
                     </td>
                     <td class="h-16 px-6 py-5">
                         <input name="price" type="text" id="small-input"
-                               value="{{$currentProduct->price}}"
+                               value="{{$product->price}}"
                                class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
                     </td>
                     <td class="h-16 px-6 py-5 bg-gray-50 dark:bg-gray-800 flex">
                         <input name="image" type="file" class="self-center" disabled/>
-                        <input type="hidden" name="product_id" value="{{$currentProduct->id}}">
+                        <input type="hidden" name="product_id" value="{{$product->id}}">
                     </td>
                 </tr>
                 </tbody>
