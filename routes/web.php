@@ -21,9 +21,9 @@ Route::post("/nova-ocena",[OceneController::class,"novaOcena"]);
 Route::get("/admin/all-contacts", [ContactController::class, 'getAllContacts']);
 Route::get("/admin/products", [ShopController::class, 'getAllProducts']);
 Route::get("/admin/add-product", [ShopController::class, "addProduct"]);
-Route::get("/admin/all-products",[ShopController::class,'adminAllProducts']);
-Route::get("/admin/delete-product/{product}",[ShopController::class,"delete"]);
-Route::get("/admin/delete-contact/{contact}",[ContactController::class,'delete']);
+Route::get("/admin/all-products",[ShopController::class,'adminAllProducts'])->name('adminAllProducts');
+Route::get("/admin/delete-product/{product}",[ShopController::class,"delete"])->name('deleteProduct');
+Route::get("/admin/delete-contact/{contact}",[ContactController::class,'delete'])->name('deleteContact');
 
 
 Route::post("/admin/send-contact", [ContactController::class, "sendContact"]);

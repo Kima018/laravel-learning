@@ -44,7 +44,7 @@ class ShopController extends Controller
             "price" => $request->get("price")
         ]);
 
-        return redirect('/admin/all-products');
+        return redirect()->route('adminAllProducts');
     }
 
     public function adminAllProducts()
