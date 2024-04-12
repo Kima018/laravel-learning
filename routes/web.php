@@ -18,24 +18,24 @@ Route::get("/dodaj-ocenu", [OceneController::class, 'dodajOcenu']);
 Route::post("/nova-ocena", [OceneController::class, "novaOcena"]);
 
 //
-Route::middleware('auth')->group(function () {
-    Route::get("/admin/all-contacts", [ContactController::class, 'getAllContacts'])->name('adminAllContacts');
+Route::middleware('auth')->prefix("admin")->group(function () {
+    Route::get("/all-contacts", [ContactController::class, 'getAllContacts'])->name('adminAllContacts');
 //Route::get("/admin/products", [ShopController::class, 'getAllProducts']);
-    Route::get("/admin/add-product", [ShopController::class, "addProduct"]);
-    Route::get("/admin/all-products", [ShopController::class, 'adminAllProducts'])->middleware('auth')->name('adminAllProducts');
-    Route::get("/admin/delete-product/{product}", [ShopController::class, "delete"])->name('deleteProduct');
-    Route::get("/admin/delete-contact/{contact}", [ContactController::class, 'delete'])->name('deleteContact');
+    Route::get("/add-product", [ShopController::class, "addProduct"]);
+    Route::get("/all-products", [ShopController::class, 'adminAllProducts'])->middleware('auth')->name('adminAllProducts');
+    Route::get("/delete-product/{product}", [ShopController::class, "delete"])->name('deleteProduct');
+    Route::get("/delete-contact/{contact}", [ContactController::class, 'delete'])->name('deleteContact');
 
 
 //domaci 8
-    Route::get("/admin/product/{product}", [ShopController::class, 'singleProduct'])->name('product.single');
-    Route::post("/admin/update-product", [ShopController::class, 'update'])->name('updateProduct');
-    Route::get("/admin/contact/{contact}", [ContactController::class, 'edit'])->name('contact.single');
-    Route::post("/admin/update-contact", [ContactController::class, 'update'])->name('updateContact');
+    Route::get("/product/{product}", [ShopController::class, 'singleProduct'])->name('product.single');
+    Route::post("/update-product", [ShopController::class, 'update'])->name('updateProduct');
+    Route::get("/contact/{contact}", [ContactController::class, 'edit'])->name('contact.single');
+    Route::post("/update-contact", [ContactController::class, 'update'])->name('updateContact');
 
 //
-    Route::post("/admin/send-contact", [ContactController::class, "sendContact"]);
-    Route::post("/admin/send-product", [ShopController::class, "sendProduct"]);
+    Route::post("/send-contact", [ContactController::class, "sendContact"]);
+    Route::post("/send-product", [ShopController::class, "sendProduct"]);
 
 });
 
