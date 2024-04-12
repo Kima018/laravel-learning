@@ -48,7 +48,7 @@
                         </td>
                         <td class="px-6 py-4 flex justify-start gap-2 flex-wrap md:flex-nowrap">
                             <a href="{{route('deleteProduct',['product'=>$product->id])}}" class="px-2 py-2 rounded bg-red-800 text-white">Delete</a>
-                            <a class="px-2 py-2 rounded bg-blue-800 text-white">Edit</a>
+                            <a href="{{route('editProduct',['id'=>$product->id])}}" class="px-2 py-2 rounded bg-blue-800 text-white">Edit</a>
                         </td>
                     </tr>
                 @endforeach

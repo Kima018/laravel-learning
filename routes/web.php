@@ -18,13 +18,21 @@ Route::post("/nova-ocena",[OceneController::class,"novaOcena"]);
 
 //
 
-Route::get("/admin/all-contacts", [ContactController::class, 'getAllContacts']);
-Route::get("/admin/products", [ShopController::class, 'getAllProducts']);
+Route::get("/admin/all-contacts", [ContactController::class, 'getAllContacts'])->name('adminAllContacts');
+//Route::get("/admin/products", [ShopController::class, 'getAllProducts']);
 Route::get("/admin/add-product", [ShopController::class, "addProduct"]);
 Route::get("/admin/all-products",[ShopController::class,'adminAllProducts'])->name('adminAllProducts');
 Route::get("/admin/delete-product/{product}",[ShopController::class,"delete"])->name('deleteProduct');
 Route::get("/admin/delete-contact/{contact}",[ContactController::class,'delete'])->name('deleteContact');
 
+
+//domaci 8
+Route::get("/admin/product/{id}",[ShopController::class,'edit'])->name('editProduct');
+Route::post("/admin/update-product",[ShopController::class,'update'])->name('updateProduct');
+Route::get("/admin/contact/{id}",[ContactController::class,'edit'])->name('editContact');
+Route::post("/admin/update-contact",[ContactController::class,'update'])->name('updateContact');
+
+//
 
 Route::post("/admin/send-contact", [ContactController::class, "sendContact"]);
 Route::post("/admin/send-product", [ShopController::class, "sendProduct"]);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\ProductModel;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use function SebastianBergmann\Type\TestFixture\voidReturnType;
@@ -28,7 +29,7 @@ class ShopController extends Controller
         return view('addProduct');
     }
 
-    public function sendProduct(Request $request)
+    public function sendProduct(Request $request):RedirectResponse
     {
         $request->validate([
             "product_name" => "required|string|unique:products,name",
@@ -47,17 +48,43 @@ class ShopController extends Controller
         return redirect()->route('adminAllProducts');
     }
 
-    public function adminAllProducts()
+    public function adminAllProducts():View
     {
         $products = ProductModel::all();
         return view('adminAllProducts', compact('products'));
     }
 
-    public function delete($product)
+    public function delete($product):RedirectResponse
     {
         $singleProduct = ProductModel::where(["id" => $product])->first();
         $singleProduct->delete();
         return redirect()->back();
+    }
+
+    public function edit($id):View
+    {
+        $currentProduct = ProductModel::where(["id" => $id])->first();
+        return view('editProduct', compact('currentProduct'));
+    }
+
+    public function update(Request $request): RedirectResponse
+    {
+        $request->validate([
+            "product_name" => "required|string",
+            "description" => "required",
+            "amount" => "required",
+            "price" => "required|int",
+        ]);
+
+        ProductModel::where(["id" => $request->get('product_id')])
+            ->update([
+                "name" => $request->get("product_name"),
+                "description" => $request->get("description"),
+                "amount" => $request->get("amount"),
+                "price" => $request->get("price")
+            ]);
+
+        return redirect()->route('adminAllProducts');
     }
 
 }

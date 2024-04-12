@@ -25,6 +25,8 @@
     @yield('allProducts')
     @yield('addProduct')
     @yield('adminAllProducts')
+    @yield('editProduct')
+    @yield('editContact')
 
     @include('footer')
 
