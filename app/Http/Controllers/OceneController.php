@@ -21,18 +21,6 @@ class OceneController extends Controller
 
     public function novaOcena(Request $request)
     {
-        $request->validate([
-            "predmet" => "required|string",
-            "ocena" => "required|integer|digits_between:1,5",
-            "profesor" => "required|string",
-        ]);
-
-        Ocene::create([
-            "predmet" => $request->get("predmet"),
-            "ocena" => $request->get("ocena"),
-            "profesor" => $request->get("profesor"),
-        ]);
-        return redirect("/ocene");
-
+        Ocene::createOcena($request);
     }
 }

@@ -16,4 +16,19 @@ class Ocene extends Model
         "user_id"
     ];
 
+    public static function createOcena($request)
+    {
+        $request->validate([
+            "predmet" => "required|string",
+            "ocena" => "required|integer|digits_between:1,5",
+            "profesor" => "required|string",
+        ]);
+
+        Ocene::create([
+            "predmet" => $request->get("predmet"),
+            "ocena" => $request->get("ocena"),
+            "profesor" => $request->get("profesor"),
+        ]);
+        return redirect("/ocene");
+    }
 }
